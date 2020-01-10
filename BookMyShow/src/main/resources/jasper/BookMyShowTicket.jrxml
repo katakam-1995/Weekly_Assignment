@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BookMyShowTicket" pageWidth="650" pageHeight="576" orientation="Landscape" columnWidth="610" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="70cb7074-20b0-45fc-8653-ed5d1506d26a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="52"/>
+	<parameter name="BOOKING_ID" class="java.lang.String"/>
+	<parameter name="MOVIE_NAME" class="java.lang.String"/>
+	<parameter name="DATE" class="java.lang.String"/>
+	<parameter name="TIME" class="java.lang.String"/>
+	<parameter name="SEATS" class="java.lang.String"/>
+	<parameter name="MOVIE_IMAGE" class="java.lang.String"/>
+	<parameter name="SCREEN_NAME" class="java.lang.String"/>
+	<parameter name="QRCODE_IMAGE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="480" splitType="Stretch">
+			<rectangle>
+				<reportElement x="10" y="67" width="589" height="366" backcolor="#F0F0F0" uuid="23380008-d8fd-427d-b00e-52f1bdcfea60"/>
+			</rectangle>
+			<line>
+				<reportElement x="10" y="89" width="589" height="1" uuid="e84b7148-90b8-4d87-b979-64f0453d91ca"/>
+			</line>
+			<staticText>
+				<reportElement x="30" y="70" width="70" height="20" uuid="c2f73356-abd9-4dc9-ba6c-d12dd45f94f0"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Booking ID : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="70" width="308" height="20" uuid="c779b9d9-5788-4697-b63a-0f68508995ef"/>
+				<textFieldExpression><![CDATA[$P{BOOKING_ID}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="10" y="275" width="589" height="1" uuid="fded5a20-7825-4b29-a78f-83a8178a5d76"/>
+			</line>
+			<textField>
+				<reportElement x="30" y="285" width="415" height="20" uuid="8f921380-9f25-41d9-9765-359a700026b8"/>
+				<textFieldExpression><![CDATA[$P{MOVIE_NAME}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="30" y="100" width="539" height="164" backcolor="#333333" uuid="8f11b472-e684-4985-8652-bc928b3c2983"/>
+				<imageExpression><![CDATA[new java.io.ByteArrayInputStream(org.apache.commons.codec.binary.Base64.decodeBase64($P{MOVIE_IMAGE}.getBytes()))]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="30" y="315" width="100" height="20" uuid="f1fac132-6fcf-48bf-b8ad-082f8a94df0c"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField pattern="EEE, MMM d, &apos;&apos;yy">
+				<reportElement x="30" y="334" width="173" height="20" uuid="bb90b603-3038-439b-9ca4-dcc0bb65cd12"/>
+				<textFieldExpression><![CDATA[$P{DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="469" y="285" width="100" height="20" uuid="084f6113-542e-45ca-94b3-7620bf8d9a34"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Time :]]></text>
+			</staticText>
+			<textField pattern="HH.mm">
+				<reportElement x="469" y="305" width="100" height="20" uuid="e197b1e6-62e9-4666-a404-93fc8f371b42"/>
+				<textFieldExpression><![CDATA[$P{TIME}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="30" y="364" width="100" height="20" uuid="72da201e-e860-4b99-b6b0-013c76476af7"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Venue :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="384" width="100" height="32" uuid="8c509b9b-1435-47d1-9f01-4c6e00203df0"/>
+				<text><![CDATA[Hitech, Madhapur, Hyderabad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="469" y="364" width="100" height="20" uuid="f7bc961e-ea55-47d1-bbc7-ccf5738e8e01"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Seats :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="469" y="384" width="130" height="49" uuid="f5bb82c3-e6f5-4dd3-875c-cab9c378b1d3"/>
+				<textFieldExpression><![CDATA[$P{SEATS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="469" y="325" width="100" height="20" uuid="1642c5d7-21c7-4d0c-add9-6fba8c7a0d4b"/>
+				<textElement>
+					<font isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Screen :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="469" y="345" width="100" height="20" uuid="4f4172d6-bf75-460a-a7e7-e8a700b740c6"/>
+				<textFieldExpression><![CDATA[$P{SCREEN_NAME}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="247" y="305" width="79" height="68" uuid="859fc665-d0c4-457b-8167-1efa8c8e7692"/>
+				<imageExpression><![CDATA[new java.io.ByteArrayInputStream(org.apache.commons.codec.binary.Base64.decodeBase64($P{QRCODE_IMAGE}.getBytes()))]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="162" y="384" width="283" height="49" uuid="e244b94b-cf84-47b7-90a5-7676b7948710"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[This transaction can be cancelled up to 20 min(s) before the show as per cinema cancellation policy. ]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
